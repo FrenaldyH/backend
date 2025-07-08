@@ -69,10 +69,13 @@ Use the `update` command followed by the task ID and the `--status` flag.
 
 ```bash
 # Change the status of task with ID 1 to "in-progress"
-task_tracker update 1 --status in-progress
+task_tracker mark-in-progress 1
 
 # Change the status of task with ID 2 to "done"
-task_tracker update 2 --status done
+task_tracker mark-done 2
+
+# Change the status of task with ID 3 to "todo"
+tack_tracker mark-todo 3
 ```
 
 ### 4. Delete a task
