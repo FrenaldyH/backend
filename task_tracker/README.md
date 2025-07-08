@@ -22,13 +22,48 @@ Before you begin, ensure you have the following installed on your system:
 
 ---
 
-## 🚀 Installation
+## 🚀 Installation & Setup
 
-You can install the Task Tracker CLI directly from GitHub using the `go install` command:
+There are two ways to set up the CLI on your machine.
+
+### Option 1: Using `go install` (Recommended)
+
+This is the easiest way to install the command-line tool so you can run it from anywhere.
+
 ```bash
 go install [github.com/FrenaldyH/backend/task_tracker@latest](https://github.com/FrenaldyH/backend/task_tracker@latest)
 ```
 After installation, make sure your `$GOPATH/bin` directory is in your system's `PATH`.
+
+### Option 2: From Source (via `git clone`)
+
+Use this method if you want to explore or modify the source code.
+
+**1. Clone the repository:**
+```bash
+git clone [https://github.com/FrenaldyH/backend.git](https://github.com/FrenaldyH/backend.git)
+```
+
+**2. Navigate to the project directory:**
+```bash
+cd backend/task_tracker
+```
+
+**3. Run or Build the application:**
+You can either run the program directly or build a permanent executable.
+
+* **To run directly (for testing):**
+    ```bash
+    go run main.go list
+    ```
+* **To build an executable file:**
+    ```bash
+    go build
+    ```
+    This will create an executable file named `task_tracker`. You can then run it like this:
+    ```bash
+    ./task_tracker add "My new task from source"
+    ```
 
 ---
 
