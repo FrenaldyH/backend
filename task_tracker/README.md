@@ -41,7 +41,7 @@ Use this method if you want to explore or modify the source code.
 
 **1. Clone the repository:**
 ```bash
-git clone [https://github.com/FrenaldyH/backend.git](https://github.com/FrenaldyH/backend.git)
+git clone https://github.com/FrenaldyH/backend.git
 ```
 
 **2. Navigate to the project directory:**
