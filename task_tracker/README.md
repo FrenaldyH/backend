@@ -31,7 +31,7 @@ There are two ways to set up the CLI on your machine.
 This is the easiest way to install the command-line tool so you can run it from anywhere.
 
 ```bash
-go install [github.com/FrenaldyH/backend/task_tracker@latest](https://github.com/FrenaldyH/backend/task_tracker@latest)
+go install github.com/FrenaldyH/backend/task_tracker@latest
 ```
 After installation, make sure your `$GOPATH/bin` directory is in your system's `PATH`.
 
