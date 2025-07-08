@@ -30,4 +30,4 @@ Here is a list of the projects contained within this repository. Each project is
 
 * **GitHub:** [FrenaldyH](https://github.com/FrenaldyH)
 * **LinkedIn:** [Frenaldy](www.linkedin.com/in/frenaldyh)
-* **Codeforces:** [FRenH](https://codeforces.com/profile/FrenH)
+* **Codeforces:** [FrenH](https://codeforces.com/profile/FrenH)
