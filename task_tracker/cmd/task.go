@@ -16,7 +16,7 @@ type Task struct {
 
 var (
 	arrT       []Task
-	timeLayout = "2006-01-02 15:04 GMT+04:00"
+	timeLayout = "2006-01-02 15:04 MST"
 )
 
 const DB = "tasks.json"
