@@ -2,8 +2,6 @@
 
 A simple and efficient command-line tool to manage your daily tasks, built with Go and Cobra. This project is inspired by the "Task Tracker" project from [roadmap.sh](https://roadmap.sh/projects/task-tracker).
 
-![image](https://github.com/FrenaldyH/backend/assets/136067711/84c311c1-4b10-4ed3-bc75-c9a9d77f4339)
-
 ---
 
 ## ✨ Features
@@ -16,9 +14,15 @@ A simple and efficient command-line tool to manage your daily tasks, built with 
 
 ---
 
-## 🚀 Installation
+## ✅ Prerequisites
 
-Ensure you have Go (version 1.18+) installed on your system.
+Before you begin, ensure you have the following installed on your system:
+- **Go:** Version 1.18 or higher.
+- **Git:** For cloning the repository.
+
+---
+
+## 🚀 Installation
 
 You can install the Task Tracker CLI directly from GitHub using the `go install` command:
 ```bash
@@ -77,9 +81,3 @@ Use the `delete` command or its aliases (`d`, `rm`, `hapus`) followed by the tas
 ```bash
 task_tracker delete 3
 ```
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
