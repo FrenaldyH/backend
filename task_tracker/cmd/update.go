@@ -3,7 +3,7 @@ package cmd
 import (
 	"strconv"
 	"strings"
-	"time"
+	"task_tracker/internal"
 
 	"github.com/spf13/cobra"
 )
@@ -31,10 +31,10 @@ var (
 				return redError("new description is requaired")
 			} else if idx, err := strconv.Atoi(args[0]); err != nil {
 				return redError("index must be a natural number")
-			} else if err := searchIndex(idx); err != "" {
+			} else if err := internal.SearchIndex(idx); err != "" {
 				return redError(err)
 			} else {
-				updateDescription(idx, strings.Join(args[1:], " "))
+				internal.UpdateDescription(idx, strings.Join(args[1:], " "))
 				return nil
 			}
 
@@ -45,7 +45,7 @@ var (
 		Aliases: []string{"mt", "todo"},
 		Short:   "Mark a task as todo",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			if err := updateStatusTask(args, "todo"); err != "" {
+			if err := internal.UpdateStatusTask(args, "todo"); err != "" {
 				return redError(err)
 			}
 			return nil
@@ -56,7 +56,7 @@ var (
 		Aliases: []string{"mip", "in-progress", "progress"},
 		Short:   "Mark a task as in-progress",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			if err := updateStatusTask(args, "in-progress"); err != "" {
+			if err := internal.UpdateStatusTask(args, "in-progress"); err != "" {
 				return redError(err)
 			}
 			return nil
@@ -67,32 +67,10 @@ var (
 		Aliases: []string{"md", "done"},
 		Short:   "Mark a task as done",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			if err := updateStatusTask(args, "done"); err != "" {
+			if err := internal.UpdateStatusTask(args, "done"); err != "" {
 				return redError(err)
 			}
 			return nil
 		},
 	}
 )
-
-func updateStatusTask(args []string, newStatus string) string {
-	if len(args) == 0 {
-		return "task ID is required"
-	}
-
-	if len(args) > 1 {
-		return "mark argument to long"
-	} else if idx, err := strconv.Atoi(args[0]); err != nil {
-		return "index must be a natural number"
-	} else if err := searchIndex(idx); err != "" {
-		return err
-	} else {
-		arrT[idx-1].Status = newStatus
-		return ""
-	}
-}
-
-func updateDescription(idx int, newDescription string) {
-	arrT[idx-1].Description = newDescription
-	arrT[idx-1].UpdatedAt = time.Now().Format(timeLayout)
-}

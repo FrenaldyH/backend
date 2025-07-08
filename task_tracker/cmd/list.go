@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"task_tracker/internal"
 
 	"github.com/spf13/cobra"
 )
@@ -29,7 +30,7 @@ var cmdList = &cobra.Command{
 		case 1:
 			return listTasks(args[0])
 		default:
-			return redError("list arguments to long")
+			return redError("too many arguments for list command")
 		}
 	},
 }
@@ -43,7 +44,7 @@ func listTasks(flag string) error {
 	}
 
 	var rows [][]string
-	for _, val := range arrT {
+	for _, val := range internal.ArrT {
 		if (flag != "all" && val.Status != flag) || val.Status == "deleted" {
 			continue
 		}

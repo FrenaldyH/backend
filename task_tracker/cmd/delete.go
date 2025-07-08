@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"task_tracker/internal"
 
 	"github.com/spf13/cobra"
 )
@@ -16,27 +17,22 @@ var deleteCmd = &cobra.Command{
 	Use:     "delete",
 	Aliases: []string{"d", "del", "rm", "remove", "hapus"},
 	Short:   "Delete a task",
-	Long: `Delete a specify task by it's ID
+	Long: `Delete a specific task by its ID 
 	Example: 
 	task-tracker delete 'ID'
 	`,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if len(os.Args) < 3 {
-			return redError("task ID is requaired")
+			return redError("a task ID is required")
 		} else if len(os.Args) > 3 {
-			return redError("delete argument to long")
+			return redError("too many arguments for delete command")
 		} else if idx, err := strconv.Atoi(args[0]); err != nil {
-			return redError("index must be a natural number")
-		} else if err := searchIndex(idx); err != "" {
+			return redError("ID must be a positive number")
+		} else if err := internal.SearchIndex(idx); err != "" {
 			return redError(err)
 		} else {
-			return deleteTask(idx)
+			fmt.Printf(internal.Green+"\n  Task %d deleted successfully"+internal.Rc, idx)
+			return internal.DeleteTask(idx)
 		}
 	},
-}
-
-func deleteTask(deletedID int) error {
-	arrT[deletedID-1].Status = "deleted"
-	fmt.Printf(green+"\n  delete task %d successfully\n"+rc, deletedID)
-	return nil
 }

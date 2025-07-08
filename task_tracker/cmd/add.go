@@ -4,16 +4,16 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"time"
+	"task_tracker/internal"
 
 	"github.com/spf13/cobra"
 )
 
 func init() {
-	rootCmd.AddCommand(&addCmd)
+	rootCmd.AddCommand(addCmd)
 }
 
-var addCmd = cobra.Command{
+var addCmd = &cobra.Command{
 	Use:     "add",
 	Aliases: []string{"a", "insert", "append", "tambah"},
 	Short:   "Add a task to the task list",
@@ -22,22 +22,12 @@ var addCmd = cobra.Command{
 	task-tracker add 'description'`,
 	PreRunE: func(cmd *cobra.Command, args []string) error {
 		if len(os.Args) < 3 {
-			return redError("task description is required")
+			return redError("a task description is required")
 		}
 		return nil
 	},
 	Run: func(cmd *cobra.Command, args []string) {
-		addTask(strings.Join(args[0:], " "))
+		internal.AddTask(strings.Join(args[0:], " "))
+		fmt.Print(internal.Green + "\n  Task added successfully\n" + internal.Rc)
 	},
-}
-
-func addTask(newTask string) {
-	arrT = append(
-		arrT, Task{
-			ID:          len(arrT) + 1,
-			Description: newTask,
-			Status:      "todo",
-			CreatedAt:   time.Now().Format(timeLayout),
-			UpdatedAt:   ""})
-	fmt.Print(green + "\n  Add task successfully\n" + rc)
 }

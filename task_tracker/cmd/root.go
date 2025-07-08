@@ -2,15 +2,11 @@ package cmd
 
 import (
 	"errors"
+	"fmt"
+	"os"
+	"task_tracker/internal"
 
 	"github.com/spf13/cobra"
-)
-
-const (
-	rc     = "\x1B[0m\n"
-	red    = "\x1B[31m"
-	green  = "\x1B[32m"
-	yellow = "\x1B[33m"
 )
 
 var rootCmd = &cobra.Command{
@@ -20,16 +16,22 @@ var rootCmd = &cobra.Command{
 }
 
 func redError(err string) error {
-	return errors.New(red + "\n  " + err + rc)
+	return errors.New(internal.Red + "\n  " + err + internal.Rc)
 }
 
 func Execute() error {
-	if err := loadTask(); err != "" {
-		return redError(err)
-	} else if err := rootCmd.Execute(); err != nil {
-		return err
-	} else if err := saveTask(); err != "" {
-		return redError(err)
+	if err := internal.LoadTask(); err != "" {
+		fmt.Fprintln(os.Stderr, redError(err))
+		os.Exit(1)
+	}
+
+	if err := rootCmd.Execute(); err != nil {
+		os.Exit(1)
+	}
+
+	if err := internal.SaveTask(); err != "" {
+		fmt.Fprintln(os.Stderr, redError(err))
+		os.Exit(1)
 	}
 	return nil
 }
