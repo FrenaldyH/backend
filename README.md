@@ -12,7 +12,7 @@ Here is a list of the projects contained within this repository. Each project is
 
 | Project | Short Description | Technologies Used | Link |
 | :--- | :--- | :--- | :--- |
-| **Task Tracker CLI** | A CLI application to manage a daily to-do list (add, list, update, delete). | `Go`, `Cobra`, `CLI` | [View Code](./task-tracker/) |
+| **Task Tracker CLI** | A CLI application to manage a daily to-do list (add, list, update, delete). | `Go`, `Cobra`, `CLI` | [View Code](./task_tracker/) |
 
 ---
 
