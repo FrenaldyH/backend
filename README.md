@@ -12,9 +12,7 @@ Here is a list of the projects contained within this repository. Each project is
 
 | Project | Short Description | Technologies Used | Link |
 | :--- | :--- | :--- | :--- |
-| **Task Tracker CLI** | A CLI application to manage a daily to-do list (add, list, update, delete). | `Go`, `Cobra` | [View Code](./go-task-tracker-cli/) |
-| **(Example) E-commerce REST API** | A basic REST API for products on an e-commerce platform. | `Go`, `Gin`, `Gorm`, `MySQL` | [View Code](./gin-ecommerce-api/) |
-| **(Example) URL Shortener** | A service to shorten long URLs into more manageable links. | `Go`, `Fiber`, `Redis` | [View Code](./project-lainnya/) |
+| **Task Tracker CLI** | A CLI application to manage a daily to-do list (add, list, update, delete). | `Go`, `Cobra`, `CLI` | [View Code](./task-tracker/) |
 
 ---
 
