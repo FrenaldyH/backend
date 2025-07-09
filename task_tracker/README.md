@@ -1,6 +1,6 @@
 # Task Tracker CLI 📝
 
-A simple and efficient command-line tool to manage your daily tasks, built with Go and Cobra. This project is inspired by the "Task Tracker" project from [roadmap.sh](https://roadmap.sh/projects/task-tracker).
+A simple and efficient command-line tool to manage your daily tasks, built with Go and Cobra. This project is inspired by the "Task Tracker" project from [roadmap.sh](https://roadmap.sh/projects/task-tracker). If you like this project, please consider giving it an upvote on the [solution page](https://roadmap.sh/projects/task-tracker/solutions?u=66979755bf471856f5e80ec4).
 
 ---
 
