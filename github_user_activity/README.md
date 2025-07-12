@@ -56,10 +56,10 @@ github-activity <username>
 
 ```bash
 # Get activities for user "octocat"
-github-activity octocat
+github-activity kamranahmedse
 
 # Get activities for user "torvalds"
-github-activity torvalds
+github-activity FrenaldyH
 
 # Get your own activities
 github-activity yourusername
@@ -68,6 +68,12 @@ github-activity yourusername
 ### Sample Output
 
 ```
+         FrenaldyH's Recent Activity
+════════════════════════════════════
+
+  │  Pushed 1 commit(s) to FrenaldyH/backend on 2025-07-09 at 21:33
+  │  Performed a PublicEvent action in FrenaldyH/snippets on 2025-07-09 at 03:29
+  │  Pushed 1 commit(s) to FrenaldyH/backend on 2025-07-08 at 03:53
 
 ```
 
