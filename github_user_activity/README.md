@@ -2,7 +2,7 @@
 
 A command-line interface tool to fetch and display GitHub user activities directly in your terminal. Built with Go and enhanced with elegant styling using Lipgloss.
 
-This project is inspired by the [GitHub User Activity](https://roadmap.sh/projects/github-user-activity) project from roadmap.sh.
+This project is inspired by the [GitHub User Activity](https://roadmap.sh/projects/github-user-activity) project from roadmap.sh. If you like this project, please consider voting for [voting for my solution on roadmap.sh!](https://roadmap.sh/projects/github-user-activity/solutions?u=66979755bf471856f5e80ec4).
 
 ## ✨ Features
 
